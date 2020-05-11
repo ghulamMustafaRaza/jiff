@@ -155,7 +155,7 @@ function lcsToJsonPatch(a1, a2, path, state, lcsMatrix) {
 	return lcs.reduce(function(state, op, i, j) {
 		var last, context;
 		var patch = state.patch;
-		var p = path + '/' + (op === lcs.REMOVE ? (j + offset) : '-');
+		var p = path + '/' + (op === lcs.ADD ? '-' : (j + offset));
 
 		if (op === lcs.REMOVE) {
 			// Coalesce adjacent remove + add into replace
